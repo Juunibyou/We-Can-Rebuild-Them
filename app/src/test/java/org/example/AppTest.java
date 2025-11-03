@@ -7,5 +7,25 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-  
+    @Test
+    void testInsertAndDelete() {
+        AVLTree tree = new AVLTree();
+
+        tree.insert(2);
+        tree.insert(4);
+        tree.insert(8);
+
+        String serialized = tree.serialize();
+        assertTrue(serialized.contains("2"));
+        assertTrue(serialized.contains("4"));
+        assertTrue(serialized.contains("8"));
+
+        tree.delete(4);
+
+        serialized = tree.serialize();
+        assertFalse(serialized.contains("4")); //false
+        assertTrue(serialized.contains("2"));
+        assertTrue(serialized.contains("8"));
+    }
 }
+

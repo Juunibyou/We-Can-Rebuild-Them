@@ -109,4 +109,18 @@ public class AVLTree {
 
         return current;
     }
+
+//SERIALIZE
+
+    public String serialize(){
+        return serialized(root);
+    }
+
+    private String serialized(AVLNode node){
+        if(node == null){
+            return "null";
+        }
+        return node.value + "," + serialized(node.left) + "," +serialized(node.right);
+    }
+
 }
