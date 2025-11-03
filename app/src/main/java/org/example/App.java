@@ -2,7 +2,7 @@ package org.example;
 
 public class App {
   public static void main(String[] args) {
-    AVLNode tree = new AVLNode();
+    AVLTree tree = new AVLTree();
  
     // Inserts four nodes into the tree
     tree.insert(3);
